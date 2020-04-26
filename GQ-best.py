@@ -82,7 +82,7 @@ hidden_dim = 50
 layer_dim = 1
 
 batch_size = 32
-num_epochs = 90
+num_epochs = 200
 learning_rate = 1e-3
 
 print("dataset_file",dataset_file)
@@ -141,6 +141,7 @@ class Data:
     
     for q in self.queries:
       q_embedding = []
+      q = q.strip()
       for i,w in enumerate(q.split(' ')):
         if i == max_length - 1:
           break

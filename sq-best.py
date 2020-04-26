@@ -73,7 +73,7 @@ glove = pickle.load(pickle_in)
 
 dataset_file = "data/dataset_SQ.tsv"
 type_2_Id_File = "data/id2ClassMappingsXifengWikiWeb768.txt"
-sentence_sequence_length = 20
+sentence_sequence_length = 10
 glove_vector_len = 50
 input_require_grad = False
 
@@ -82,7 +82,7 @@ hidden_dim = 50
 layer_dim = 1
 
 batch_size = 100
-num_epochs = 10
+num_epochs = 60
 learning_rate = 1e-3
 
 print("dataset_file",dataset_file)
@@ -140,6 +140,7 @@ class Data:
     max_length = self.max_length 
     
     for q in self.queries:
+      q = q.strip()
       q_embedding = []
       for i,w in enumerate(q.split(' ')):
         if i == max_length - 1:
@@ -378,5 +379,17 @@ def TestEvaluation(model, testSet):
 print('*'*20)
 print("Complete iteration model")
 TestEvaluation(model, testSet)
+print('*'*20)
+print("dataset_file",dataset_file)
+print("type_2_Id_File",type_2_Id_File)
+print("sentence_sequence_length",sentence_sequence_length)
+print("glove_vector_len", glove_vector_len)
+print("input_require_grad",input_require_grad)
 
-"""63% epochs 60"""
+print("input_dim",input_dim)
+print("hidden_dim",hidden_dim)
+print("layer_dim",layer_dim)
+
+print("batch_size",batch_size)
+print("num_epochs",num_epochs)
+print("learning_rate",learning_rate)

@@ -66,16 +66,16 @@ import torchvision.transforms as transforms
 """Load the glove dictionary"""
 
 import pickle
-pickle_in = open("glove_dict_tensor.pkl","rb")
+pickle_in = open("data/glove_dict_tensor.pkl","rb")
 glove = pickle.load(pickle_in)
 
 """Hyperparameters"""
 
-dataset_file = "dataset_GQ.tsv"
-type_2_Id_File = "id2ClassMappingsXifengWikiWeb768.txt"
+dataset_file = "data/dataset_GQ.tsv"
+type_2_Id_File = "data/id2ClassMappingsXifengWikiWeb768.txt"
 sentence_sequence_length = 20
 glove_vector_len = 50
-input_require_grad = True
+input_require_grad = False
 
 input_dim = 50
 hidden_dim = 50
@@ -84,6 +84,20 @@ layer_dim = 1
 batch_size = 32
 num_epochs = 70
 learning_rate = 1e-3
+
+print("dataset_file",dataset_file)
+print("type_2_Id_File",type_2_Id_File)
+print("sentence_sequence_length",sentence_sequence_length)
+print("glove_vector_len", glove_vector_len)
+print("input_require_grad",input_require_grad)
+
+print("input_dim",input_dim)
+print("hidden_dim",hidden_dim)
+print("layer_dim",layer_dim)
+
+print("batch_size",batch_size)
+print("num_epochs",num_epochs)
+print("learning_rate",learning_rate)
 
 class Data:
   def __init__(self, datasetFile, type2IdFile, batchSize=batch_size):
@@ -127,6 +141,7 @@ class Data:
     
     for q in self.queries:
       q_embedding = []
+      q = q.strip()
       for i,w in enumerate(q.split(' ')):
         if i == max_length - 1:
           break
@@ -267,9 +282,9 @@ for epochs in tqdm(range(num_epochs)):
   
   for batch in trainSet:
     if input_require_grad == True:
-      b_input_ids = batch[0].view(-1,20,50).requires_grad_()
+      b_input_ids = batch[0].view(-1,sentence_sequence_length,glove_vector_len).requires_grad_()
     else:
-      b_input_ids = batch[0].view(-1,20,50)
+      b_input_ids = batch[0].view(-1,sentence_sequence_length,glove_vector_len)
 
     b_labels = batch[1]
     if b_labels.shape[0]!=batch_size:

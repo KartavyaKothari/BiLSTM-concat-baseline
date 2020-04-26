@@ -82,7 +82,7 @@ hidden_dim = 50
 layer_dim = 1
 
 batch_size = 32
-num_epochs = 70
+num_epochs = 90
 learning_rate = 1e-3
 
 print("dataset_file",dataset_file)
@@ -378,5 +378,17 @@ def TestEvaluation(model, testSet):
 print('*'*20)
 print("Complete iteration model")
 TestEvaluation(model, testSet)
+print('*'*20)
+print("dataset_file",dataset_file)
+print("type_2_Id_File",type_2_Id_File)
+print("sentence_sequence_length",sentence_sequence_length)
+print("glove_vector_len", glove_vector_len)
+print("input_require_grad",input_require_grad)
 
-"""63% epochs 60"""
+print("input_dim",input_dim)
+print("hidden_dim",hidden_dim)
+print("layer_dim",layer_dim)
+
+print("batch_size",batch_size)
+print("num_epochs",num_epochs)
+print("learning_rate",learning_rate)

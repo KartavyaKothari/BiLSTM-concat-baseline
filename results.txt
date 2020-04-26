@@ -28,9 +28,9 @@ input_dim 50
 hidden_dim 50
 layer_dim 1
 batch_size 32
-num_epochs 70
+num_epochs 80
 learning_rate 0.001
 
 Complete iteration model
-Test Accuracy: 0.68 - 0.703125
-Test F1-score micro: 0.68 - 0.703125
+Test Accuracy: 0.67-0.69
+Test F1-score micro: 0.68 - 0.69

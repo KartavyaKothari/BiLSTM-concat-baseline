@@ -1,7 +1,7 @@
 ********************
 Complete iteration model
-Test Accuracy: 0.7828125
-Test F1-score micro: 0.7828125
+Test Accuracy: 0.853125
+Test F1-score micro: 0.853125
 ********************
 dataset_file data/dataset_GQ.tsv
 type_2_Id_File data/id2ClassMappingsXifengWikiWeb768.txt
@@ -12,10 +12,15 @@ input_dim 50
 hidden_dim 50
 layer_dim 1
 batch_size 32
-num_epochs 90
+num_epochs 150
 learning_rate 0.001
 
 
+
+********************
+Complete iteration model
+Test Accuracy: 0.8328125
+Test F1-score micro: 0.8328125
 ********************
 dataset_file data/dataset_GQ.tsv
 type_2_Id_File data/id2ClassMappingsXifengWikiWeb768.txt
@@ -26,20 +31,16 @@ input_dim 50
 hidden_dim 50
 layer_dim 1
 batch_size 32
-num_epochs 90
+num_epochs 200
 learning_rate 0.001
-
-Complete iteration model
-Test Accuracy: 0.72-0.76
-Test F1-score micro: 0.72-0.76
 
 
 
 
 ********************
 Complete iteration model
-Test Accuracy: 0.4955769230769231
-Test F1-score micro: 0.4955769230769231
+Test Accuracy: 0.575
+Test F1-score micro: 0.575
 ********************
 dataset_file data/dataset_SQ.tsv
 type_2_Id_File data/id2ClassMappingsXifengWikiWeb768.txt
@@ -50,5 +51,5 @@ input_dim 50
 hidden_dim 50
 layer_dim 1
 batch_size 100
-num_epochs 30
-learning_rate 0.001
+num_epochs 40
+learning_rate 0.005

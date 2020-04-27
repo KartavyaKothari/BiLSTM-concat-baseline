@@ -73,7 +73,7 @@ glove = pickle.load(pickle_in)
 
 dataset_file = "data/dataset_TQ.tsv"
 type_2_Id_File = "data/id2ClassMappingsXifengWikiWeb768.txt"
-sentence_sequence_length = 70
+sentence_sequence_length = 20
 glove_vector_len = 50
 input_require_grad = False
 
@@ -81,9 +81,9 @@ input_dim = 50
 hidden_dim = 50
 layer_dim = 1
 
-batch_size = 200
-num_epochs = 30
-learning_rate = 1e-4
+batch_size = 100
+num_epochs = 100
+learning_rate = 1e-6
 
 print("dataset_file",dataset_file)
 print("type_2_Id_File",type_2_Id_File)

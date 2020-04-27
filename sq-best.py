@@ -82,8 +82,8 @@ hidden_dim = 50
 layer_dim = 1
 
 batch_size = 100
-num_epochs = 60
-learning_rate = 1e-3
+num_epochs = 100
+learning_rate = 5e-3
 
 print("dataset_file",dataset_file)
 print("type_2_Id_File",type_2_Id_File)

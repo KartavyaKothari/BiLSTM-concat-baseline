@@ -1,30 +1,29 @@
 ********************
 Complete iteration model
-Test Accuracy: 0.853125
-Test F1-score micro: 0.853125
+Test Accuracy: 0.865625
+Test F1-score micro: 0.865625
 ********************
 dataset_file data/dataset_GQ.tsv
 type_2_Id_File data/id2ClassMappingsXifengWikiWeb768.txt
-sentence_sequence_length 20
+sentence_sequence_length 15
 glove_vector_len 50
 input_require_grad True
 input_dim 50
 hidden_dim 50
 layer_dim 1
 batch_size 32
-num_epochs 150
+num_epochs 200
 learning_rate 0.001
 
 
 
-********************
 Complete iteration model
-Test Accuracy: 0.8328125
-Test F1-score micro: 0.8328125
+Test Accuracy: 0.8921875
+Test F1-score micro: 0.8921875
 ********************
 dataset_file data/dataset_GQ.tsv
 type_2_Id_File data/id2ClassMappingsXifengWikiWeb768.txt
-sentence_sequence_length 20
+sentence_sequence_length 15
 glove_vector_len 50
 input_require_grad False
 input_dim 50
@@ -51,5 +50,5 @@ input_dim 50
 hidden_dim 50
 layer_dim 1
 batch_size 100
-num_epochs 40
+num_epochs 100
 learning_rate 0.005
